@@ -2,9 +2,11 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import HomePage from './pages/Home';
 import Products from './pages/Products';
 const router=createBrowserRouter([
-  {path:'/',element:<HomePage></HomePage>},
-  {path:'/products',element:<Products></Products>}
-
+  {
+    path:'/',element:<RootLayout></RootLayout>
+    ,children:[ {path:'/',element:<HomePage></HomePage>},
+    {path:'/products',element:<Products></Products>}]
+  }
 ]);
 
 function App() { 
